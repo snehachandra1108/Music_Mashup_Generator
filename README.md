@@ -47,14 +47,15 @@ Try Mixify here: [Launch Mixify](https://project-mmg.vercel.app/)
 
 ## 🛠️ Tech Stack & Skills Used
 
-| Technology | How it is used |
-| HTML5 | Application structure and audio elements |
-| CSS3 | Styling, responsive layouts, animations and UI design |
-| JavaScript (ES6+) | Application logic, event handling and dynamic updates |
+| Technology | Concepts & Skills |
+|---|---|
+| HTML5 | Semantic HTML, forms, audio and canvas elements |
+| CSS3 | Flexbox, Grid, responsive design, animations and transitions |
+| JavaScript (ES6+) | DOM manipulation, event handling, array methods, Promises, async/await |
+| Fetch API | API integration, HTTP requests and JSON handling |
+| Web Audio API | Audio processing, playback and audio visualization |
+| Canvas API | Dynamic audio visualizer rendering |
 | Audius API | Music search and audio streaming |
-| Web Audio API | Audio processing, playback analysis and visualization |
-| Canvas API | Rendering the audio visualizer |
-| Fetch API | Making HTTP requests to retrieve music data |
 | Git & GitHub | Version control and project management |
 
 ### Technical Concepts Implemented
