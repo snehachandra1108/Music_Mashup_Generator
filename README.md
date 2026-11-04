@@ -40,6 +40,9 @@ The goal is to explore how web technologies and audio processing can be combined
 - Dedicated Now Playing section.
 
 ---
+### 🌐 Live Demo
+
+Try Mixify here: [Launch Mixify](https://project-mmg.vercel.app/)
 
 ## 🛠️ Tech Stack & Skills Used
 
