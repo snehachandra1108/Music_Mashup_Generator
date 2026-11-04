@@ -48,7 +48,6 @@ Try Mixify here: [Launch Mixify](https://project-mmg.vercel.app/)
 ## 🛠️ Tech Stack & Skills Used
 
 | Technology | How it is used |
-|---|---|
 | HTML5 | Application structure and audio elements |
 | CSS3 | Styling, responsive layouts, animations and UI design |
 | JavaScript (ES6+) | Application logic, event handling and dynamic updates |
