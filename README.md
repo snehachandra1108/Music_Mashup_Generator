@@ -58,7 +58,7 @@ Try Mixify here: [Launch Mixify](https://project-mmg.vercel.app/)
 | Git & GitHub | Version control and project management |
 
 ### Technical Concepts Implemented
--**HTML5:** Semantic elements, forms, audio and canvas elements.
+- **HTML5:** Semantic elements, forms, audio and canvas elements.
 - **CSS3:** Flexbox, Grid, responsive design, animations and transitions.
 - **JavaScript (ES6+):** DOM manipulation, event handling, array methods, Promises, async/await and Fetch API.
 - **Web APIs:** Audius API integration, Web Audio API and Canvas API.
