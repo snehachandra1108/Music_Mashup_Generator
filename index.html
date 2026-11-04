@@ -3,24 +3,111 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Music Mashup Generator</title>
+  <meta name="theme-color" content="#0b0a12">
+  <title>Mixify — Music Mashup Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="mashup-application">
-    <h1>Music Mashup Generator</h1>
-    <div id="search-area">
-      <input type="text" id="input-box" placeholder="Search for Tracks..." />
-      <button id="fetch-btn">Fetch Tracks</button>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">♫</span> mixify<span class="brand-period">.</span></a>
+    <div class="topbar-right"><span class="status-dot"></span> YOUR PERSONAL MUSIC STUDIO</div>
+  </header>
+
+  <main class="page-shell">
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span>✦</span> YOUR SOUND, YOUR RULES</div>
+        <h1>Make music<br>feel <span>different.</span></h1>
+        <p>Find the tracks you love. Bring them together. Create a mashup that's entirely yours.</p>
+        <a class="primary-link" href="#discover">Explore tracks <span>↘</span></a>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
+        <div class="hero-disc"><div class="disc-label">M<br><small>♫</small></div></div>
+        <span class="music-note note-a">♪</span><span class="music-note note-b">♫</span>
+        <div class="hero-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+    </section>
+
+    <section class="section" id="discover">
+      <div class="section-heading">
+        <div><div class="section-kicker">01 / DISCOVER</div><h2>Find your next track<span>.</span></h2><p>Search the Audius music catalogue.</p></div>
+        <div class="section-side-note">THE SOUND STARTS HERE</div>
+      </div>
+
+      <div class="panel">
+        <form class="search-form" id="search-form">
+          <span class="search-icon">⌕</span>
+          <input id="search-input" type="search" placeholder="Search songs, artists or genres..." autocomplete="off">
+          <button id="search-btn" type="submit">Search <span>→</span></button>
+        </form>
+        <div class="list-heading"><span>SEARCH RESULTS</span><span id="result-count">Ready when you are</span></div>
+        <div id="search-results" class="track-list">
+          <div class="empty-state"><div class="empty-symbol">♫</div><strong>Your soundtrack starts here.</strong><p>Search for a song or artist to see matching tracks.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <div><div class="section-kicker">02 / COMPOSE</div><h2>Your mashup lineup<span>.</span></h2><p>Arrange the tracks you want to combine.</p></div>
+        <div class="section-side-note">MINIMUM 2 TRACKS</div>
+      </div>
+      <div class="panel lineup-panel">
+        <div id="selected-tracks" class="selected-list">
+          <div class="empty-state compact"><div class="empty-symbol">＋</div><strong>Your lineup is empty.</strong><p>Add tracks from your search results.</p></div>
+        </div>
+        <p id="estimated-mashup-duration" class="estimated-mashup-duration">Estimated mashup duration: 0:00</p>
+        <div class="lineup-footer">
+          <div class="lineup-hint"><span class="status-dot"></span><span id="selection-count">0 tracks selected</span><span class="hint-divider">·</span> Set duration for each track</div>
+          <button id="generate-btn" class="generate-btn" disabled><span>✦</span> Generate mashup <span>→</span></button>
+        </div>
+        <p id="generation-status" class="generation-status" role="status"></p>
+      </div>
+    </section>
+
+    <section id="mashup-player" class="section mashup-section" hidden>
+      <div class="section-heading">
+        <div><div class="section-kicker">03 / YOUR CREATION</div><h2>Freshly mixed<span>.</span></h2><p>Your mashup is ready. Press play and enjoy.</p></div>
+        <div class="section-side-note">MADE BY YOU</div>
+      </div>
+      <div class="mashup-panel">
+        <div class="mashup-cover"><div class="cover-rings"></div><div class="cover-note">♫</div><span>MIXIFY ORIGINAL</span></div>
+        <div class="mashup-content">
+          <div class="mashup-overline"><span class="status-dot"></span> CUSTOM MASHUP</div>
+          <h3>Your mix is ready</h3>
+          <p id="mashup-description">A new combination made from your selected tracks.</p>
+          <canvas id="mashup-visualizer" class="visualizer mashup-visualizer" aria-label="Audio visualizer"></canvas>
+          <audio id="mashup-audio" controls></audio>
+          <div class="mashup-actions"><button id="stop-mashup-btn" class="secondary-btn" type="button">■ Stop</button><a id="download-mashup-btn" class="download-btn" href="#" download="my-mashup.wav">↓ Download WAV</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><a class="brand footer-brand" href="#">♫ mixify<span class="brand-period">.</span></a><span>Made for the love of music.</span></footer>
+
+  <aside id="now-playing" class="now-playing" aria-label="Now playing">
+    <div class="now-track">
+      <div class="now-art" id="now-art"><span>♫</span></div>
+      <div class="now-meta"><strong id="now-title">Nothing playing</strong><span id="now-artist">Choose a track to preview</span></div>
     </div>
-    <div id="mashup-area">
-      <button id="download-btn">Download Mashup</button>
+    <div class="now-center">
+      <div class="now-controls">
+        <button id="now-play-btn" class="player-control main-control" type="button" aria-label="Play">▶</button>
+        <button id="now-stop-btn" class="player-control" type="button" aria-label="Stop">■</button>
+      </div>
+      <canvas id="track-visualizer" class="visualizer track-visualizer" aria-label="Live audio visualizer"></canvas>
     </div>
-    <div id="selected-tracks-area">
-      <h2>Selected Tracks</h2>
-      <ul id="selected-tracks"></ul>
-    </div>
-  </div>
+    <div class="now-state"><span class="playing-indicator"><i></i><i></i><i></i><i></i></span><span id="now-state-text">READY</span><span id="now-time" class="now-time">0:00 / 0:00</span></div>
+  </aside>
+
   <script src="script.js"></script>
 </body>
 </html>
